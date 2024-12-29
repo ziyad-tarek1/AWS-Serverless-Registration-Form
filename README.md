@@ -66,12 +66,30 @@ Copy the function code to your Lambda function in the AWS console.
 
 ### Step 5: Create API Gateway and Enable CORS
 
-1- Open the API Gateway service and create a new REST API.
-2- Create a resource named register and enable CORS for this resource.
-3- Add a POST method to the register resource and attach it to the Lambda function.
-4- Enable CORS for the POST method.
-5- Deploy the API and obtain the Invoke URL.
-6- Update the script.js file in the Frontend directory with the Invoke URL.
+1. Open the **API Gateway** service in the AWS Management Console.
+2. Create a new REST API:
+   - Choose **REST API**.
+   - Provide a name for your API (e.g., `RegistrationAPI`).
+3. Create a resource named `register`:
+   - Under the **Resources** section, click **Create Resource**.
+   - Enter `register` as the **Resource Name**.
+   - Enable **CORS** for this resource.
+4. Add a **POST** method to the `register` resource:
+   - Select the `register` resource.
+   - Click **Create Method** and choose `POST`.
+   - Attach the POST method to the Lambda function (`registration-function`).
+   - Save the configuration.
+5. Enable **CORS** for the POST method:
+   - In the POST method settings, select **Enable CORS**.
+   - Save the changes.
+6. Deploy the API:
+   - Click **Deploy API**.
+   - Select **New Stage** or an existing stage (e.g., `prod`).
+   - Obtain the **Invoke URL** from the deployment details.
+7. Update the `script.js` file in the `Frontend` directory:
+   - Open the `script.js` file.
+   - Replace the placeholder API URL with the **Invoke URL** obtained from the previous step.
+
 
 
 
